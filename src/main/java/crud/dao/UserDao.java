@@ -1,17 +1,17 @@
 package crud.dao;
 
-import crud.model.UserEntity;
-
+import crud.model.User;
 import java.util.List;
 
+
 public interface UserDao {
-    List<UserEntity> getAllUsers();
+    List<User> getAllUsers();
 
-    UserEntity getUserById(int id);
+    User getUserById(int id);
 
-    void createUser(UserEntity user);
+    void createUser(User user);
 
-    void update(int id, UserEntity user);
+    void update(int id, User user);
 
     void delete(int id);
 }

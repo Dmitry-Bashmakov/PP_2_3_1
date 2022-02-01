@@ -1,8 +1,18 @@
 package crud.service;
 
-import crud.dao.UserDao;
-import org.springframework.context.annotation.Bean;
+import crud.model.User;
 
-public interface UserService extends UserDao {
+import java.util.List;
 
+public interface UserService {
+
+    List<User> getAllUsers();
+
+    User getUserById(int id);
+
+    void createUser(User user);
+
+    void update(int id, User user);
+
+    void delete(int id);
 }

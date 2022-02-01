@@ -7,9 +7,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
-@Entity(name = "user")
+@Entity
 @Table(name = "user", schema = "first_lesson_database", catalog = "")
-public class UserEntity implements Serializable {
+public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -27,14 +27,14 @@ public class UserEntity implements Serializable {
     @Min(value = 0, message = "Значение должно быть положительным")
     private Integer age;
 
-    public UserEntity(int id, String name, String lastName, Integer age) {
+    public User(int id, String name, String lastName, Integer age) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
     }
 
-    public UserEntity() {}
+    public User() {}
 
     public int getId() {
         return id;
@@ -72,7 +72,7 @@ public class UserEntity implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UserEntity that = (UserEntity) o;
+        User that = (User) o;
         return Objects.equals(name, that.name) && Objects.equals(lastName, that.lastName) && Objects.equals(age, that.age);
     }
 
